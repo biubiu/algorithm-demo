@@ -1,50 +1,31 @@
 package com.shawn.algorithm.basic.structure;
 
-import java.util.Iterator;
-
 /**
- * The class is to implement the Stack,
- * with the structure of 'Last in First out'
- *
- * @author Shawn cao
- *
+ * @author Shawn Cao
  */
-public class Stack<T> implements Iterable<T>{
+public interface Stack<T> extends Iterable<T>{
 
     /**
-      *
-      * @param T item
+     * push one element into the stack
+     * @param t
      */
-    public void push(T t){
-
-    }
+    public void push(T t);
 
     /**
-     *
-     * @return T item
+     * return the last insert element and delete it from the stack
+     * @return T t
      */
-    public T pop(){
-        return null;
-    }
+    public T pop();
 
     /**
-     *
-     * @return boolean
+     * the used size the current stack
+     * @return int
      */
-    public boolean isEmpty(){
-        return false;
-    }
+    public int size();
 
     /**
-     * the size of the Stack
-     * @return int size
+     * whether the stack has elements
+     * @return  boolean
      */
-    public int size(){
-        return 0;
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
+    public boolean isEmpty();
 }
