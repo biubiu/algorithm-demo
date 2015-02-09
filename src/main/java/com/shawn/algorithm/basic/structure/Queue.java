@@ -9,41 +9,31 @@ import java.util.Iterator;
  * @author Shawn cao
  *
  */
-public class Queue<T> implements  Iterable<T>{
+public interface Queue<T> extends  Iterable<T>{
     @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
+    public Iterator<T> iterator();
 
     /**
      * push item into the queue, tail to the last item and the size will augment
      * @param T item
      */
-    public void enqueue(T t){
-
-    }
+    public void enqueue(T t);
 
     /**
      * return is the queue is empty
      * @return boolean
      */
-    public boolean isEmpty(){
-        return false;
-    }
+    public boolean isEmpty();
 
     /**
      * delete the top item in the queue and the size decrease by 1
      * @return T item
      */
-    public T dequeue(){
-        return null;
-    }
+    public T dequeue();
 
     /**
      * return the size of the current queue
      * @return int
      */
-    public int size(){
-        return 0;
-    }
+    public int size();
 }

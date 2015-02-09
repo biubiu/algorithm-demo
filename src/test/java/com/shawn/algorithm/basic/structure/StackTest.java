@@ -11,31 +11,44 @@ import static org.junit.Assert.*;
 public class StackTest {
 
 
-    /**
-     * test for the basic operaitons ( push, pop, isEmpty and size)
-     */
+
     @Test
-    public void testStackBasicOperation() {
-        Stack<Integer> arrayStack = new ArrayStack<>(1);
-        assertEquals(0, arrayStack.size());
-        assertEquals(true, arrayStack.isEmpty());
-        arrayStack.push(1);
-        assertEquals(false, arrayStack.isEmpty());
-        arrayStack.push(2);
-        assertEquals(2, arrayStack.size());
-        assertEquals(2, (int) arrayStack.pop());
-        assertEquals(1, arrayStack.size());
-        assertEquals(1, (int) arrayStack.pop());
-        assertEquals(0, arrayStack.size());
-        assertEquals(true, arrayStack.isEmpty());
+    public void testArrayBasedStack(){
+        stackOperation(new ArrayStack<>());
     }
+
+
+    @Test
+    public void testLinkedListBasedStack(){
+        stackOperation(new LinkedListStack<>());
+    }
+
+    /**
+     * test stacks for the basic operaitons ( push, pop, isEmpty and size)
+     */
+    public void stackOperation(Stack<Integer> stack) {
+        assertEquals(0, stack.size());
+        assertEquals(true, stack.isEmpty());
+        stack.push(1);
+        stack.push(2);
+        assertEquals(2, stack.size());
+        assertEquals(2, (int) stack.pop());
+        assertEquals(1, stack.size());
+        assertEquals(1, (int) stack.pop());
+        assertEquals(0, stack.size());
+        assertEquals(true, stack.isEmpty());
+    }
+
+
+
 
     /**
      * test stack iterator,
      */
     @Test
     public void testStackIterator() {
-        ArrayStack<Integer> stack = new ArrayStack<>(10);
+        //ArrayStack<Integer> stack = new ArrayStack<>(10);
+        Stack<Integer> stack = new LinkedListStack<>();
         stack.push(10);
         stack.push(20);
         stack.push(30);
@@ -75,8 +88,8 @@ public class StackTest {
      */
     @Test
     public void testStackUsedForSimpleArithmetic() {
-        ArrayStack<Operator> operators = new ArrayStack<>();
-        ArrayStack<Double> values = new ArrayStack<>();
+        Stack<Operator> operators = new LinkedListStack<>();
+        Stack<Double> values = new LinkedListStack<>();
 
         Iterator<String> str = getEquationData().iterator();
 

@@ -69,6 +69,13 @@ public class ArrayStack<T> implements Stack<T>{
         throw new IndexOutOfBoundsException();
     }
 
+    @Override
+    public T peek() {
+        if(currentSize > 0)
+            return stackArray[currentSize];
+        return null;
+    }
+
     /**
      *
      * @return boolean

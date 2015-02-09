@@ -18,6 +18,12 @@ public interface Stack<T> extends Iterable<T>{
     public T pop();
 
     /**
+     * return the last inserted item without removing it from the stack
+     * @return T
+     */
+    public T peek();
+
+    /**
      * the used size the current stack
      * @return int
      */
